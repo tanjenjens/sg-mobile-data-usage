@@ -26,3 +26,4 @@ public class GeneralHelper {
         vc.present(alert, animated: true, completion: nil)
     }
 }
+

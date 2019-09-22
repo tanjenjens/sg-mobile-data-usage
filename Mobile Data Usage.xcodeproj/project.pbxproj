@@ -24,6 +24,10 @@
 		A3C0303D2335EF320029749D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C0303B2335EF320029749D /* LaunchScreen.storyboard */; };
 		A3C030482335EF330029749D /* Mobile_Data_UsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C030472335EF330029749D /* Mobile_Data_UsageTests.swift */; };
 		A3C030532335EF330029749D /* Mobile_Data_UsageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C030522335EF330029749D /* Mobile_Data_UsageUITests.swift */; };
+		A3EE5CD12336F72C0030C0B1 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE5CCF2336F72C0030C0B1 /* ListTableViewCell.swift */; };
+		A3EE5CD22336F72C0030C0B1 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3EE5CD02336F72C0030C0B1 /* ListTableViewCell.xib */; };
+		A3EE5CD4233708050030C0B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE5CD3233708050030C0B1 /* DetailViewController.swift */; };
+		A3EE5CD623370AAB0030C0B1 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE5CD523370AAB0030C0B1 /* UIKitExtension.swift */; };
 		B8F18E26EC03F2227F54B34B /* Pods_Mobile_Data_Usage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958282F157C2692BEABE5B57 /* Pods_Mobile_Data_Usage.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		A3C0304E2335EF330029749D /* Mobile Data UsageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mobile Data UsageUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C030522335EF330029749D /* Mobile_Data_UsageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile_Data_UsageUITests.swift; sourceTree = "<group>"; };
 		A3C030542335EF330029749D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3EE5CCF2336F72C0030C0B1 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		A3EE5CD02336F72C0030C0B1 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		A3EE5CD3233708050030C0B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A3EE5CD523370AAB0030C0B1 /* UIKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		C453B662D6EDF81EFA42A112 /* Pods-Mobile Data UsageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Data UsageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Data UsageUITests/Pods-Mobile Data UsageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE5E880943EF297D6C0F8B5 /* Pods_Mobile_Data_UsageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Data_UsageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70C4410D6AED592BAE0AD1F /* Pods-Mobile Data Usage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Data Usage.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Data Usage/Pods-Mobile Data Usage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A301B7302335F46C001108CE /* ListViewController.swift */,
+				A3EE5CD3233708050030C0B1 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -154,6 +163,7 @@
 			children = (
 				A301B73A2335FD30001108CE /* Constants.swift */,
 				A3858DB02336111E00699ACD /* GeneralHelper.swift */,
+				A3EE5CD523370AAB0030C0B1 /* UIKitExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -185,6 +195,7 @@
 			children = (
 				A301B7322335FA96001108CE /* Service */,
 				A301B72F2335F414001108CE /* ViewControllers */,
+				A3EE5CCE2336F6FC0030C0B1 /* Custom View */,
 				A301B7352335FC75001108CE /* Utilities */,
 				A3C030322335EF2F0029749D /* AppDelegate.swift */,
 				A3C030362335EF2F0029749D /* Main.storyboard */,
@@ -211,6 +222,15 @@
 				A3C030542335EF330029749D /* Info.plist */,
 			);
 			path = "Mobile Data UsageUITests";
+			sourceTree = "<group>";
+		};
+		A3EE5CCE2336F6FC0030C0B1 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				A3EE5CCF2336F72C0030C0B1 /* ListTableViewCell.swift */,
+				A3EE5CD02336F72C0030C0B1 /* ListTableViewCell.xib */,
+			);
+			path = "Custom View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C0303D2335EF320029749D /* LaunchScreen.storyboard in Resources */,
+				A3EE5CD22336F72C0030C0B1 /* ListTableViewCell.xib in Resources */,
 				A3C0303A2335EF320029749D /* Assets.xcassets in Resources */,
 				A3C030382335EF2F0029749D /* Main.storyboard in Resources */,
 			);
@@ -434,8 +455,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3EE5CD12336F72C0030C0B1 /* ListTableViewCell.swift in Sources */,
 				A3858DB3233611CA00699ACD /* Request.swift in Sources */,
 				A3858DB72336177300699ACD /* BBTask.swift in Sources */,
+				A3EE5CD623370AAB0030C0B1 /* UIKitExtension.swift in Sources */,
+				A3EE5CD4233708050030C0B1 /* DetailViewController.swift in Sources */,
 				A3858DB923361AB200699ACD /* Router.swift in Sources */,
 				A301B7312335F46C001108CE /* ListViewController.swift in Sources */,
 				A301B73D2335FE88001108CE /* Client.swift in Sources */,

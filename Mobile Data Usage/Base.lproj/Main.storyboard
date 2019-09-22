@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mobile Data Usage-->
+        <!--SG Mobile Data Usage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="Mobile_Data_Usage" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,11 +36,49 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mobile Data Usage" id="piA-oq-R9J"/>
+                    <navigationItem key="navigationItem" title="SG Mobile Data Usage" id="piA-oq-R9J"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZWk-he-SMZ" id="JcO-gb-Rg7"/>
+                        <segue destination="R1u-yA-biy" kind="show" identifier="DetailViewControllerSegue" id="1S3-ba-Rc2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="lvM-kf-8Tp">
+            <objects>
+                <viewController id="R1u-yA-biy" customClass="DetailViewController" customModule="Mobile_Data_Usage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aes-bA-rkE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gds-tf-vEs">
+                                <rect key="frame" x="40" y="100" width="333" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="jT8-Yg-8Tq"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gds-tf-vEs" firstAttribute="leading" secondItem="H0v-Ry-VsJ" secondAttribute="leading" constant="40" id="hrQ-Sf-lpr"/>
+                            <constraint firstItem="gds-tf-vEs" firstAttribute="top" secondItem="H0v-Ry-VsJ" secondAttribute="top" constant="12" id="rc9-Ft-XYz"/>
+                            <constraint firstItem="H0v-Ry-VsJ" firstAttribute="trailing" secondItem="gds-tf-vEs" secondAttribute="trailing" constant="41" id="x53-ES-9Fe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H0v-Ry-VsJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Mqg-er-8fh"/>
+                    <connections>
+                        <outlet property="dataLabel" destination="gds-tf-vEs" id="kx9-Qj-ZaC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tw-vt-uzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737.68115942029" y="129.91071428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NwV-Ks-1gj">

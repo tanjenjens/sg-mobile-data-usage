@@ -12,13 +12,16 @@ import SwiftyJSON
 import SwiftSpinner
 
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, ListTableViewCellDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    let cellID = "ListTableViewCell"
     var dataList = [JSON]()
+    var selectedIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
         loadData()
     }
   
@@ -59,7 +62,7 @@ class ListViewController: UIViewController {
                         self.dataList.append(JSON(yearData))
                     }
                 }
-                print("DATA LIST: \(self.dataList)")
+                self.tableView.reloadData()
             } else {
                 if let err = error {
                     GeneralHelper.showAlert(message: err.asErrorMessage(), vc: self)
@@ -68,6 +71,18 @@ class ListViewController: UIViewController {
         }
     }
 
+    // MARK: - ListTableViewCellDelegate
+    func didTapCell(_ index: Int) {
+        selectedIndex = index
+        performSegue(withIdentifier: "DetailViewControllerSegue", sender: self)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailViewController {
+            vc.data = dataList[selectedIndex]
+        }
+    }
 }
 
 
@@ -78,9 +93,16 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ListTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.delegate = self
+        cell.configureCell(data:dataList[indexPath.row], index:indexPath.row)
+        return cell
     }
-    
-    
-    
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }
+
