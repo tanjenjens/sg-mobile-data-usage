@@ -59,7 +59,6 @@ class Service {
     //MARK: - Error Mapping
     fileprivate class func mapError(from response: JSON) -> NSError? {
         let errorInfo = response["error"]
-        print("BB ERROR: : \(errorInfo as Any)")
         return errorInfo != JSON.null ? errorInfo.asError() : nil
     }
 }
@@ -126,8 +125,6 @@ extension JSON {
 
 // MARK: - String Extension
 extension String {
-    
-    // Find Error Code equivalent of Error String
     func asErrorCode() -> Int {
         switch self {
         case BBError.Message.emptyResponse:

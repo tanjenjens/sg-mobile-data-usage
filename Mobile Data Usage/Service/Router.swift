@@ -37,17 +37,6 @@ extension Router: URLRequestConvertible {
         var urlRequest = URLRequest(url: URL(string: url)!)
         urlRequest.httpMethod = method.rawValue
         urlRequest.timeoutInterval = 60
-//        var urlWithCode = "\(url)"
-//
-//        if let parameters = result.parameters {
-//            for parameter in parameters {
-//                if parameter.key == "code" {
-//                    urlWithCode = "\(urlWithCode)/\(parameter.value)"
-//                }
-//            }
-//            urlRequest.url = URL.init(string: urlWithCode)
-//        }
-        
         return try URLEncoding.default.encode(urlRequest, with: result.parameters)
     }
     
